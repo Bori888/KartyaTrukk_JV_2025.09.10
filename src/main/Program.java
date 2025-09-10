@@ -2,14 +2,19 @@ package main;
 
 public class Program {
 
+    static String[] pakli = new String[22];
+
     public static void main(String[] args) {
-        String[] pakli = new String[22];
+
+        osszealit();
+        kirak();
+
+    }
+
+    private static void osszealit() {
         String[] szinek = {"P", "T", "Z", "M"}; // Pikk, Tök, Zöld, Makk
         String[] ertekek = {"Ász", "Kir", "Fel", "X", "IX", "VII"};
-        
-        
-        
-        
+
         int index = 0;
         int makkDb = 0;
 
@@ -25,18 +30,25 @@ public class Program {
                 }
             }
         }
+    }
 
-        for (int i = 0; i < 7; i++) {
-            for (int j = 0; j < 3; j++) {
-                int idx = i * 3 + j;
+    private static void kirak() {
+        // Oszlopfejlécek
+        System.out.printf("%-10s%-10s%-10s%n", "1. oszlop", "2. oszlop", "3. oszlop");
+
+        // Kártyák kiírása: 3 oszlop, 7 sor
+        for (int sor = 0; sor < 7; sor++) {
+            for (int oszlop = 0; oszlop < 3; oszlop++) {
+                int idx = oszlop * 7 + sor;
                 if (idx < pakli.length) {
-                    System.out.printf("%-8s", pakli[idx]);
+                    System.out.printf("%-12s", pakli[idx]);
                 }
             }
             System.out.println();
         }
 
-        
+        // Elválasztó vonal
+        System.out.println("-----------------------------");
     }
 
 }
