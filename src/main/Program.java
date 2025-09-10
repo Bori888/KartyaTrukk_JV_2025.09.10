@@ -7,12 +7,17 @@ public class Program {
     static String[] pakli = new String[22];
 
     public static void main(String[] args) {
+        indito();
+    }
 
-        osszealit();
-        kirak();
-
-        beker();
-
+    private static void indito() {
+        for (int i = 0; i < 3; i++) {
+            osszealit();
+            kirak();
+            beker();
+            kever();
+        }
+        melyikVolt();
     }
 
     private static void osszealit() {
@@ -52,8 +57,6 @@ public class Program {
         System.out.println("-----------------------------");
     }
 
-        
-
     private static int beker() {
         Scanner scanner = new Scanner(System.in);
         int oszlop = 0;
@@ -64,12 +67,18 @@ public class Program {
                 oszlop = Integer.parseInt(input);
             } catch (NumberFormatException e) {
                 System.out.println("Hibás érték! Kérlek, számot adj meg.");
-                oszlop = 0; 
-            }    
+                oszlop = 0;
+            }
         }
         return oszlop;
     }
 
+    private static void kever() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    private static void melyikVolt() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
 }
-
-
