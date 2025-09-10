@@ -1,5 +1,7 @@
 package main;
 
+import java.util.Scanner;
+
 public class Program {
 
     static String[] pakli = new String[22];
@@ -8,6 +10,8 @@ public class Program {
 
         osszealit();
         kirak();
+
+        beker();
 
     }
 
@@ -33,10 +37,8 @@ public class Program {
     }
 
     private static void kirak() {
-        // Oszlopfejlécek
         System.out.printf("%-10s%-10s%-10s%n", "1. oszlop", "2. oszlop", "3. oszlop");
 
-        // Kártyák kiírása: 3 oszlop, 7 sor
         for (int sor = 0; sor < 7; sor++) {
             for (int oszlop = 0; oszlop < 3; oszlop++) {
                 int idx = oszlop * 7 + sor;
@@ -47,8 +49,27 @@ public class Program {
             System.out.println();
         }
 
-        // Elválasztó vonal
         System.out.println("-----------------------------");
     }
 
+        
+
+    private static int beker() {
+        Scanner scanner = new Scanner(System.in);
+        int oszlop = 0;
+        while (!(oszlop >= 1 && oszlop <= 3)) {
+            System.out.print("Melyik oszlopban van a kiválasztott lap? (1-3): ");
+            String input = scanner.nextLine().trim();
+            try {
+                oszlop = Integer.parseInt(input);
+            } catch (NumberFormatException e) {
+                System.out.println("Hibás érték! Kérlek, számot adj meg.");
+                oszlop = 0; 
+            }    
+        }
+        return oszlop;
+    }
+
 }
+
+
