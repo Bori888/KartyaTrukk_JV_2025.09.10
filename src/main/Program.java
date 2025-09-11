@@ -15,7 +15,8 @@ public class Program {
             osszealit();
             kirak();
             beker();
-            kever();
+            int oszlop = beker();
+            kever(oszlop);
         }
         melyikVolt();
     }
@@ -73,8 +74,34 @@ public class Program {
         return oszlop;
     }
 
-    private static void kever() {
+    private static void kever(int oszlop) {
         
+        int index = 0;
+
+        switch (oszlop) {
+            case 1:
+                for (int i = 1; i <= 7; i++) {
+                    pakli[index++] = pakli[20 - (i - 1) * 3];
+                    pakli[index++] = pakli[19 - (i - 1) * 3]; 
+                    pakli[index++] = pakli[21 - 1 - (i - 1) * 3]; 
+                }
+                
+            case 2:
+                for (int i = 1; i <= 7; i++) {
+                    pakli[index++] = pakli[19 - (i - 1) * 3]; 
+                    pakli[index++] = pakli[20 - (i - 1) * 3]; 
+                    pakli[index++] = pakli[21 - 1 - (i - 1) * 3]; 
+                }
+                
+            case 3:
+                for (int i = 1; i <= 7; i++) {
+                    pakli[index++] = pakli[19 - (i - 1) * 3]; 
+                    pakli[index++] = pakli[21 - 1 - (i - 1) * 3]; 
+                    pakli[index++] = pakli[20 - (i - 1) * 3]; 
+                }
+                
+        }
+
         
     }
 
