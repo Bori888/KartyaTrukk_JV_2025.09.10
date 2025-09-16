@@ -21,7 +21,7 @@ public class Program {
     }
 
     private static void osszeallit() {
-        // 21 lap feltöltése (4 színnel, az M színből max 3 lap)
+        // 21 lap feltöltése (példaértékek)
         String[] szinek = {"P", "T", "Z", "M"};
         String[] ertekek = {"Ász", "Kir", "Fel", "X", "IX", "VII"};
 
@@ -72,18 +72,18 @@ public class Program {
         String[] oszlop2 = new String[7];
         String[] oszlop3 = new String[7];
 
-        // Oszlopok kiszedése a pakliból a kirakás logikájával egyezően (soronként 3 oszlop)
+        // Oszlopok kiszedése soronként, hogy megfeleljen a kirakásnak
         for (int i = 0; i < 7; i++) {
             oszlop1[i] = pakli[i * 3 + 0];
             oszlop2[i] = pakli[i * 3 + 1];
             oszlop3[i] = pakli[i * 3 + 2];
         }
 
-        // Új pakli összeállítása: választott oszlop mindig középre kerül
         String[] ujPakli = new String[21];
 
         String[] bal = null, kozep = null, jobb = null;
 
+        // Választott oszlop középre kerül
         switch (oszlop) {
             case 1:
                 bal = oszlop2;
@@ -102,10 +102,11 @@ public class Program {
                 break;
         }
 
+        // Új pakli összeállítása oszloponként (7-7-7)
         for (int i = 0; i < 7; i++) {
-            ujPakli[i * 3 + 0] = bal[i];
-            ujPakli[i * 3 + 1] = kozep[i];
-            ujPakli[i * 3 + 2] = jobb[i];
+            ujPakli[i] = bal[i];
+            ujPakli[i + 7] = kozep[i];
+            ujPakli[i + 14] = jobb[i];
         }
 
         pakli = ujPakli;
