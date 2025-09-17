@@ -1,4 +1,6 @@
-package main;
+package modell;
+
+import modell.Lap;
 
 public class Pakli {
     private Lap[] lapok = new Lap[21];

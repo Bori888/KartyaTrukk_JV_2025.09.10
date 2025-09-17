@@ -1,5 +1,8 @@
 package main;
 
+import modell.Pakli;
+import nezet.KartyaTrukk;
+
 public class Indit {
 
     public static void main(String[] args) {
