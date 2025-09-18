@@ -4,7 +4,7 @@ package nezet;
 
 import java.util.Scanner;
 
-public class KartyaTrukk {
+public class KartyaTrukk_CUI {
     private Scanner scanner = new Scanner(System.in);
 
     public int melyik() { // oszlop

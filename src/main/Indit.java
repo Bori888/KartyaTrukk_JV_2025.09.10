@@ -1,7 +1,8 @@
 package main;
 
 import modell.Pakli;
-import nezet.KartyaTrukk;
+//mport nezet.KartyaTrukk_CUI;
+import nezet.KartyaTrukk_JOP;
 
 public class Indit {
 
@@ -12,7 +13,8 @@ public class Indit {
 
     private void indito() {
         Pakli pakli = new Pakli();
-        KartyaTrukk kartyaTrukk = new KartyaTrukk();
+        //KartyaTrukk_CUI kartyaTrukk = new KartyaTrukk_CUI();
+        KartyaTrukk_JOP kartyaTrukk = new KartyaTrukk_JOP();
 
         for (int i = 0; i < 3; i++) {
             pakli.kirak();

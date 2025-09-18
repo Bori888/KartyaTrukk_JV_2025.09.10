@@ -88,4 +88,8 @@ public class Pakli {
     public void ezVolt() {
         System.out.println("A gondolt lapod: " + lapok[10]);
     }
+
+    public Lap[] getLapok() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }
