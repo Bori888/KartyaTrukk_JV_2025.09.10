@@ -14,7 +14,6 @@ public class Program {
         for (int i = 0; i < 3; i++) {
             osszealit();
             kirak();
-            beker();
             int oszlop = beker();
             kever(oszlop);
         }
@@ -74,36 +73,41 @@ public class Program {
         return oszlop;
     }
 
-    private static void kever(int oszlop) {
-        
-        int index = 0;
+private static void kever(int oszlop) {
+    String[] ujPakli = new String[21]; // csak 21 lap
+    int index = 0; // 0-tól indul!
 
-        switch (oszlop) {
-            case 1:
-                for (int i = 1; i <= 7; i++) {
-                    pakli[index++] = pakli[20 - (i - 1) * 3];
-                    pakli[index++] = pakli[19 - (i - 1) * 3]; 
-                    pakli[index++] = pakli[21 - 1 - (i - 1) * 3]; 
-                }
-                
-            case 2:
-                for (int i = 1; i <= 7; i++) {
-                    pakli[index++] = pakli[19 - (i - 1) * 3]; 
-                    pakli[index++] = pakli[20 - (i - 1) * 3]; 
-                    pakli[index++] = pakli[21 - 1 - (i - 1) * 3]; 
-                }
-                
-            case 3:
-                for (int i = 1; i <= 7; i++) {
-                    pakli[index++] = pakli[19 - (i - 1) * 3]; 
-                    pakli[index++] = pakli[21 - 1 - (i - 1) * 3]; 
-                    pakli[index++] = pakli[20 - (i - 1) * 3]; 
-                }
-                
-        }
+    switch (oszlop) {
+        case 1:
+            for (int i = 0; i < 7; i++) {
+                ujPakli[index++] = pakli[20 - i * 3];  // 3. oszlop
+                ujPakli[index++] = pakli[19 - i * 3];  // 2. oszlop
+                ujPakli[index++] = pakli[18 - i * 3];  // 1. oszlop
+            }
+            break;
 
-        
+        case 2:
+            for (int i = 0; i < 7; i++) {
+                ujPakli[index++] = pakli[19 - i * 3];  // 2. oszlop
+                ujPakli[index++] = pakli[20 - i * 3];  // 3. oszlop
+                ujPakli[index++] = pakli[18 - i * 3];  // 1. oszlop
+            }
+            break;
+
+        case 3:
+            for (int i = 0; i < 7; i++) {
+                ujPakli[index++] = pakli[19 - i * 3];  // 2. oszlop
+                ujPakli[index++] = pakli[18 - i * 3];  // 1. oszlop
+                ujPakli[index++] = pakli[20 - i * 3];  // 3. oszlop
+            }
+            break;
     }
+
+    pakli = ujPakli;
+}
+
+
+
 
     private static void melyikVolt() {
         //
